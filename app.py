@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from chat import generate_response
 
-article = "Talk to me as Babe Ruth, the basket ball player. Imitate his character in the conversation."
-
 app = Flask(__name__)
 CORS(app)
 

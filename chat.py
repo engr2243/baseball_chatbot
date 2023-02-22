@@ -2,7 +2,7 @@ import openai
 
 
 # Set up the OpenAI API client
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Define a function to generate a response from GPT-3
 def generate_response(question,chat_log) -> str:
