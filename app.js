@@ -53,7 +53,7 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
 
-        fetch('http://ec2-35-88-141-182.us-west-2.compute.amazonaws.com/predict/'+ pid, {
+        fetch('http://ec2-3-222-167-210.compute-1.amazonaws.com/predict/'+ pid, {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',
