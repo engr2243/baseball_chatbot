@@ -11,7 +11,7 @@ def generate_response(question,chat_log) -> str:
     response = openai.Completion.create(
       model="text-davinci-003",
       prompt=prompt,
-      temperature=0,
+      temperature=0.10,
       max_tokens=500,
       top_p=1,
       frequency_penalty=0.0,
