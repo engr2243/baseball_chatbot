@@ -1,4 +1,4 @@
-#!/media/abid/05e50347-5aa2-4383-a889-94d44fed50ae/my_job_workspace/baseball_chatbot/venv/bin/python
+#!/home/ubuntu/baseball_chatbot/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

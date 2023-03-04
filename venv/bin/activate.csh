@@ -10,7 +10,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV '/media/abid/05e50347-5aa2-4383-a889-94d44fed50ae/my_job_workspace/baseball_chatbot/venv'
+setenv VIRTUAL_ENV '/home/ubuntu/baseball_chatbot/venv'
 
 set _OLD_VIRTUAL_PATH="$PATH:q"
 setenv PATH "$VIRTUAL_ENV:q/bin:$PATH:q"
@@ -18,7 +18,7 @@ setenv PATH "$VIRTUAL_ENV:q/bin:$PATH:q"
 
 
 if ('' != "") then
-    set env_name = ''
+    set env_name = '() '
 else
     set env_name = '('"$VIRTUAL_ENV:t:q"') '
 endif

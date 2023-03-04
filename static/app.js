@@ -1,7 +1,6 @@
 class Chatbox {
     constructor() {
         this.args = {
-            // openButton: document.querySelector('.chatbox__button'),
             chatBox: document.querySelector('.chatbox__support'),
             sendButton: document.querySelector('.send__button')
         };
@@ -12,8 +11,6 @@ class Chatbox {
     display() {
         const {chatBox, sendButton} = this.args;
 
-        // openButton.addEventListener('click', () => this.toggleState(chatBox))
-
         sendButton.addEventListener('click', () => this.onSendButton(chatBox))
 
         const node = chatBox.querySelector('input');
@@ -23,17 +20,6 @@ class Chatbox {
             }
         })
     }
-
-    // toggleState(chatbox) {
-    //     this.state = !this.state;
-
-    //     // show or hides the box
-    //     if(this.state) {
-    //         chatbox.classList.add('chatbox--active')
-    //     } else {
-    //         chatbox.classList.remove('chatbox--active')
-    //     }
-    // }
 
     onSendButton(chatbox) {
         
@@ -53,7 +39,7 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
 
-        fetch('http://127.0.0.1:5000/predict/'+ pid, {
+        fetch('http://ec2-3-222-167-210.compute-1.amazonaws.com/predict/'+ pid, {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',
@@ -86,7 +72,7 @@ class Chatbox {
             if (item.name === "Sam")
             {
                 html += 
-                '<div class="user-icon"> <img src="static/images/baberuth.png" alt="user icon" align="right" width=30 hight=30> </div>' +
+                '<div class="user-icon"> <img src="static/images/baberuthai.jpg" alt="user icon" align="right" width=40 hight=40 style= border-radius:50%> </div>' +
                 '<div class="messages__item messages__item--operator">' +         
                 item.message + '</div>'
             }
@@ -94,7 +80,7 @@ class Chatbox {
             {
                 
                 html += 
-                '<div class="user-icon width=10 hight=10"> <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-5--v1.png" alt="user icon" align="left"> </div>' +
+                '<div class=user-icon width=10px hight=10px> <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-5--v1.png" alt="user icon" align="left"> </div>' +
                 '<div class="messages__item messages__item--visitor">' +         
                 item.message + '</div>'
             }

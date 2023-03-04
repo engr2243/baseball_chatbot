@@ -50,7 +50,7 @@ def session_handler():
 @app.route("/<pid>", methods=("GET", "POST"), strict_slashes=False)
 def index(pid):
     if current_user.is_authenticated:
-        return render_template("index.html", pid=pid)
+        return render_template("index.html", pid=pid, picon="./static/images/baberuthai.jpg")
     else:
         return redirect(url_for("login"))
 
@@ -75,7 +75,7 @@ def predict(pid):
 @app.route("/login/", methods=("GET", "POST"), strict_slashes=False)
 def login():
     form = login_form()
-    pid = 2
+    pid = 1
     if form.validate_on_submit():
         try:
             user = User.query.filter_by(email=form.email.data).first()
@@ -154,4 +154,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
