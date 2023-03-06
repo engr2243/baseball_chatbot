@@ -30,3 +30,7 @@ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-cer
         SSLCertificateFile /etc/apache2/certificate/apache-certificate.crt
         SSLCertificateKeyFile /etc/apache2/certificate/apache.key
 </VirtualHost>
+
+sudo cp /home/ubuntu/baseball_chatbot/aizinga-ssl/aizinga.com.crt /etc/apache2/certificate/
+
+sudo rm aizinga.com.ca-bundle aizinga.com.key  aizinga.com.p7b aizinga.com.crt
