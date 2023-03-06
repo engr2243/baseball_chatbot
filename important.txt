@@ -1,0 +1,32 @@
+
+apt-get update
+apt-get install apache2 openssl
+
+a2enmod ssl
+a2enmod rewrite
+
+
+mkdir /etc/apache2/certificate
+cd /etc/apache2/certificate
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
+
+<VirtualHost *:443>
+		ServerName aizinga.com
+		ServerAlias www.aizinga.com
+        ServerAdmin abhussain2243@gmail.com
+        DocumentRoot /var/www/html
+        WSGIDaemonProcess baseball_chatbot threads=5
+        WSGIScriptAlias / /var/www/html/baseball_chatbot/app.wsgi
+
+        <Directory baseball_chatbot>
+            WSGIProcessGroup baseball_chatbot
+            WSGIApplicationGroup %{GLOBAL}
+            Order deny,allow
+            Allow from all
+        </Directory>		
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        SSLEngine on
+        SSLCertificateFile /etc/apache2/certificate/apache-certificate.crt
+        SSLCertificateKeyFile /etc/apache2/certificate/apache.key
+</VirtualHost>
