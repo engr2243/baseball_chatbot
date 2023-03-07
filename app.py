@@ -80,11 +80,11 @@ def login():
         try:
             user = User.query.filter_by(email=form.email.data).first()
             try:
-                if check_password_hash(user.pwd, form.pwd.data):
-                    login_user(user)
-                    return redirect(url_for('index', pid=pid))
-                else:
-                    flash("Invalid Username or password!", "danger")
+            #     if check_password_hash(user.pwd, form.pwd.data):
+                login_user(user)
+                return redirect(url_for('index', pid=pid))
+                # else:
+            #         flash("Invalid Username or password!", "danger")
             except Exception as e:
                 flash("Invalid Username or password!", "danger")
         except Exception as e:
@@ -105,20 +105,20 @@ def register():
     form = register_form()
     if form.validate_on_submit():
         try:
+            name = form.name.data
             email = form.email.data
-            pwd = form.pwd.data
-            username = form.username.data
             
             newuser = User(
-                username=username,
+                name = name,
                 email=email,
-                pwd=bcrypt.generate_password_hash(pwd),
             )
     
             db.session.add(newuser)
             db.session.commit()
-            flash(f"Account Succesfully created", "success")
-            return redirect(url_for("login"))
+            # flash(f"Account Succesfully created", "success")
+            user = User.query.filter_by(email=form.email.data).first()
+            login_user(user)
+            return redirect(url_for('index', pid=1))
 
         except InvalidRequestError:
             db.session.rollback()
@@ -154,4 +154,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(port=8080)
+    app.run(port=8080, debug=True)
