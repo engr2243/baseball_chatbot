@@ -47,10 +47,10 @@ def session_handler():
     session.permanent = True
     app.permanent_session_lifetime = timedelta(minutes=1)
 
-@app.route("/<pid>", methods=("GET", "POST"), strict_slashes=False)
-def index(pid):
+@app.route("/", methods=("GET", "POST"), strict_slashes=False)
+def index():
     if current_user.is_authenticated:
-        return render_template("index.html", pid=pid, picon="./static/images/baberuthai.jpg")
+        return render_template("index.html", pid=1, picon="./static/images/baberuthai.jpg")
     else:
         return redirect(url_for("login"))
 
@@ -86,7 +86,7 @@ def login():
                 # else:
             #         flash("Invalid Username or password!", "danger")
             except Exception as e:
-                flash("Invalid Username or password!", "danger")
+                return redirect(url_for('register', pid=pid))
         except Exception as e:
             flash(e, "danger")
 
