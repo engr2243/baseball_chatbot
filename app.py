@@ -112,7 +112,7 @@ def register():
                 name = name,
                 email=email,
             )
-    
+
             db.session.add(newuser)
             db.session.commit()
             # flash(f"Account Succesfully created", "success")

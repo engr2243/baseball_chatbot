@@ -10,9 +10,9 @@ mkdir /etc/apache2/certificate
 cd /etc/apache2/certificate
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
 
+ServerName chatbot.pinstripesnation.com
 <VirtualHost *:443>
-		ServerName aizinga.com
-		ServerAlias www.aizinga.com
+		ServerAlias www.chatbot.pinstripesnation.com
         ServerAdmin abhussain2243@gmail.com
         DocumentRoot /var/www/html
         WSGIDaemonProcess baseball_chatbot threads=5
@@ -31,6 +31,8 @@ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-cer
         SSLCertificateKeyFile /etc/apache2/certificate/apache.key
 </VirtualHost>
 
-sudo cp /home/ubuntu/baseball_chatbot/aizinga-ssl/aizinga.com.crt /etc/apache2/certificate/
+sudo cp /home/ubuntu/baseball_chatbot/aizinga-ssl/chatbot-subdomain-PK.txt /etc/apache2/certificate/
 
 sudo rm aizinga.com.ca-bundle aizinga.com.key  aizinga.com.p7b aizinga.com.crt
+
+sudo ln -sT ~/baseball_chatbot /var/www/html/baseball_chatbot
