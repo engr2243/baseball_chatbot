@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{url_for('static', filename='chatbot_style.css')}}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Babe Ruth</title>
+</head>
+<body>   
+    <div class="chatbox">
+        <div id="chatID" pid="{{ pid }}"></div>
+        <div class="chatbox__support">
+            <div class="chatbox__support">
+                <div class="chatbox__header">                    
+                    <div class="chatbox__image--header">
+                        <img src="{{picon}}" alt="image" >
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">BabeAI Chatbot</h4>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
+
+</body>
+
+</html>
