@@ -36,3 +36,9 @@ sudo cp /home/ubuntu/baseball_chatbot/aizinga-ssl/chatbot-subdomain-PK.txt /etc/
 sudo rm aizinga.com.ca-bundle aizinga.com.key  aizinga.com.p7b aizinga.com.crt
 
 sudo ln -sT ~/baseball_chatbot /var/www/html/baseball_chatbot
+
+
+#Database Permissions:
+sudo chown www-data /var/www/html/
+sudo chown www-data /var/www/html/baseball_chatbot
+sudo chown www-data /var/www/html/baseball_chatbot/database.db

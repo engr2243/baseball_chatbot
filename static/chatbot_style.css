@@ -1,9 +1,9 @@
 html {
-    --primaryGradient: linear-gradient(93.12deg, #88221b 0.52%, #d42811 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #8a1717 -2.14%, #be1919 99.69%);
+    --primaryGradient: linear-gradient(93.12deg, #0c063b 0.52%, #011652 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #0c063b -2.14%, #011652 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(177, 26, 26, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(199, 32, 32, 0.1);
-    --primary: #886ea3;
+    --primary: #6aa548;
 }
 
 body {
