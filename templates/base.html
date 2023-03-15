@@ -5,12 +5,12 @@
     <style>
         .bg-image-with-color  {
             background-color: #00264a;
-            /* background-image: url(../static/images/background.png); */
-            /* background-position: center; */
-            /* background-repeat: no-repeat; */
-            /* top: auto; */
-            /* background-size: 30% 80%; */
-            /* background-attachment: fixed; */
+            /* background-image: url(../static/images/background.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-position-y: 300px;
+            background-size: 500px 100%;
+            background-attachment: fixed; */
         }
 
     </style> 
@@ -28,6 +28,7 @@
     <div class="container-fluid">
         {% block content%}
         {% endblock %}
+        <img src="../static/images/background.png" style="margin:auto; padding-top:30px; width:300px;display:block" />
     </div>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
