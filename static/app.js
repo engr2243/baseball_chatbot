@@ -39,7 +39,7 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
 
-        fetch('https://www.chatbot.pinstripesnation.com/predict/'+ pid, {
+        fetch('http://127.0.0.1:5000/predict/'+ pid, {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',
